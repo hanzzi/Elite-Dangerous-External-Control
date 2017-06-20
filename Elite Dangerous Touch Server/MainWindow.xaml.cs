@@ -23,34 +23,10 @@ namespace Elite_Dangerous_Touch_Server
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string Hostname;
-        private int Port;
 
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        private void ToggleLanding()
-        {
-
-        }
-
-        private void ChangeNetworkConfig()
-        {
-            Hostname = "INSERTHOSTNAMETEXTBOXHERE";
-            Port = 010101;
-        }
-
-        private void SendCommand(string command)
-        {
-            TcpClient client = new TcpClient(Hostname, Port);
-
-            client.WriteData(command);
-            client.Close();
-        }
-
-
-
     }
 }

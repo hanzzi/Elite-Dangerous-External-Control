@@ -7,12 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="595" Width="990"
         SizeToContent="WidthAndHeight">
+    <Window.Background>
+        <ImageBrush Stretch="Fill" AlignmentX="Center" AlignmentY="Center">
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="D:\HEX_Image.png"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+
+    </Window.Background>
     <DockPanel x:Name="MainDock" HorizontalAlignment="Left" Height="Auto" LastChildFill="False" Margin="10,10,0,-20" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="-0.7,-0.2">
         <DockPanel x:Name="RightDock" Height="565" LastChildFill="False" VerticalAlignment="Top" Width="800" RenderTransformOrigin="0.576,0.496" DockPanel.Dock="Right">
             <Grid x:Name="RightDockGrid" Height="555" VerticalAlignment="Top" Width="800"/>
         </DockPanel>
         <DockPanel x:Name="LeftDock" Height="565" LastChildFill="False" VerticalAlignment="Top" Width="165">
-            <Grid x:Name="LeftDockGrid" Height="555" VerticalAlignment="Top" Width="165"/>
+            <Grid x:Name="LeftDockGrid" Height="555" VerticalAlignment="Top" Width="165">
+                <Button x:Name="ControlButton" Content="Ship Controller" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="50" Foreground="OrangeRed" FontSize="20" FontFamily="Century Gothic">
+                    <Button.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.7"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="ControlButton_Copy" Content="Ship Controller" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="50" Foreground="OrangeRed" FontSize="19" FontFamily="Euro Caps" Margin="0,55,0,0">
+                    <Button.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
         </DockPanel>
     </DockPanel>
 </Window>
