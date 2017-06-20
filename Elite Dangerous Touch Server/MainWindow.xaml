@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Elite_Dangerous_Touch_Server"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="595" Width="990"
+        SizeToContent="WidthAndHeight">
+    <DockPanel x:Name="MainDock" HorizontalAlignment="Left" Height="Auto" LastChildFill="False" Margin="10,10,0,-20" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="-0.7,-0.2">
+        <DockPanel x:Name="RightDock" Height="565" LastChildFill="False" VerticalAlignment="Top" Width="800" RenderTransformOrigin="0.576,0.496" DockPanel.Dock="Right">
+            <Grid x:Name="RightDockGrid" Height="555" VerticalAlignment="Top" Width="800"/>
+        </DockPanel>
+        <DockPanel x:Name="LeftDock" Height="565" LastChildFill="False" VerticalAlignment="Top" Width="165">
+            <Grid x:Name="LeftDockGrid" Height="555" VerticalAlignment="Top" Width="165"/>
+        </DockPanel>
+    </DockPanel>
 </Window>
