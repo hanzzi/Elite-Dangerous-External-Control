@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,6 +28,17 @@ namespace Elite_Dangerous_Touch_Server
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ShipControlButton_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+        }
+
+        private void CTRL_Reciever_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

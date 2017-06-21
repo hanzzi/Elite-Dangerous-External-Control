@@ -52,7 +52,7 @@ namespace Elite_Dangerous_Touch_Server
         private void SendCommand(string command)
         {
             TcpClient client = new TcpClient(Hostname, Port);
-
+            
             client.WriteData(command);
             client.Close();
         }
