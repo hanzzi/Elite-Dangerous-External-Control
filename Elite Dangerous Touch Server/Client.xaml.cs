@@ -26,6 +26,10 @@ namespace Elite_Dangerous_Touch_Server
         public Client()
         {
             InitializeComponent();
+            IPSetup IP = new IPSetup();
+            IP.ShowDialog();
+            
+            
         }
 
         private void ToggleLanding()
@@ -41,6 +45,11 @@ namespace Elite_Dangerous_Touch_Server
         private void RequestDocking()
         {
             SendCommand("COMMAND:RequestDocking");
+        }
+
+        private void SilentRunning()
+        {
+            SendCommand("COMMAND:SilentRunning");
         }
 
         private void ChangeNetworkConfig()

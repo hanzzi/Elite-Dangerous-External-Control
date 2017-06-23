@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000"
         SizeToContent="WidthAndHeight">
+    
+    <Window.Resources>
+        
+    </Window.Resources>
+    
+    
     <Window.Background>
         <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="None">
             <ImageBrush.ImageSource>

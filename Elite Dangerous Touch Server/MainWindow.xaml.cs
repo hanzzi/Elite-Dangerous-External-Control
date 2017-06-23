@@ -32,13 +32,13 @@ namespace Elite_Dangerous_Touch_Server
 
         private void ShipControlButton_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
-            client.Show();
+            IPSetup ip = new IPSetup();
+            ip.Show();
         }
 
         private void CTRL_Reciever_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

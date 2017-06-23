@@ -1,0 +1,51 @@
+﻿<Window x:Class="Elite_Dangerous_Touch_Server.IPSetup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Elite_Dangerous_Touch_Server"
+        mc:Ignorable="d"
+        Title="IPSetup" Height="351" Width="504">
+    <Window.Background>
+        <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="None">
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="D:\HEX_Image.png"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Name="BaseButton" x:Key="BaseButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Euro Caps"/>
+            <Setter Property="Foreground" Value="OrangeRed"/>
+            <Setter Property="Focusable" Value="False"/>
+        </Style>
+        <Style x:Name="BaseTextbox" x:Key="BaseTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Euro Caps"/>
+            <Setter Property="Foreground" Value="OrangeRed"/>
+            <Setter Property="MaxLength" Value="3" />
+        </Style>
+        <Style x:Name="BasePortTextBox" x:Key="BasePortTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Euro Caps"/>
+            <Setter Property="Foreground" Value="OrangeRed"/>
+            <Setter Property="MaxLength" Value="5" />
+        </Style>
+        <Style x:Name="BaseLabel" x:Key="BaseLabel" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Euro Caps"/>
+            <Setter Property="Foreground" Value="OrangeRed"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <TextBox x:Name="IpBox1" TabIndex="1" TextChanged="IpAddressTextBoxHandler1" Style="{StaticResource BaseTextBox}" HorizontalAlignment="Left" Height="25" Margin="115,115,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="45" FontFamily="Euro Caps" FontSize="20"/>
+        <TextBox x:Name="IpBox2" TabIndex="2" TextChanged="IpAddressTextBoxHandler2" Style="{StaticResource BaseTextBox}" HorizontalAlignment="Left" Height="25" Margin="165,115,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="45" FontFamily="Euro Caps" FontSize="20"/>
+        <TextBox x:Name="IpBox3" TabIndex="3" TextChanged="IpAddressTextBoxHandler3" Style="{StaticResource BaseTextBox}" HorizontalAlignment="Left" Height="25" Margin="215,115,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="45" FontFamily="Euro Caps" FontSize="20"/>
+        <TextBox x:Name="IpBox4" TabIndex="4" TextChanged="IpAddressTextBoxHandler4" Style="{StaticResource BaseTextBox}" HorizontalAlignment="Left" Height="25" Margin="265,115,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="45" FontFamily="Euro Caps" FontSize="20"/>
+        <TextBox x:Name="PortBox" TabIndex="5" Style="{StaticResource BasePortTextBox}" HorizontalAlignment="Left" Height="25" Margin="315,115,0,0" TextWrapping="Wrap" Text="00000" VerticalAlignment="Top" Width="70" FontFamily="Euro Caps" FontSize="20" TextDecorations="{x:Null}"/>
+        <Button x:Name="ProceedButton"  Style="{StaticResource BaseButton}" Content="Proceed" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="50" Foreground="OrangeRed" FontSize="19" Margin="155,195,0,0"/>
+        <Label x:Name="label" Style="{StaticResource BaseLabel}" Content="Insert Ip address of your main computer" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top" Width="405" FontFamily="Euro Caps" FontSize="20"/>
+    </Grid>
+</Window>
