@@ -33,6 +33,7 @@ namespace Elite_Dangerous_Touch_Server
         private void ShipControlButton_Click(object sender, RoutedEventArgs e)
         {
             IPSetup ip = new IPSetup();
+            ip.Owner = this;
             ip.Show();
         }
 
