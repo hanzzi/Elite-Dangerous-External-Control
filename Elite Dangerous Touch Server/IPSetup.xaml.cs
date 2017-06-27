@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,14 +29,6 @@ namespace Elite_Dangerous_Touch_Server
             IpBox1.Focus();
             IpBox1.SelectAll();
         }
-
-        private IPAddress BuildIpAdress()
-        {
-            IPAddress addr = IPAddress.Parse($"{IpBox1}.{IpBox2}.{IpBox3}.{IpBox4}");
-
-            return addr;
-        }
-
 
         private void IpAddressTextBoxHandler1(object sender, TextChangedEventArgs e)
         {
@@ -94,9 +87,57 @@ namespace Elite_Dangerous_Touch_Server
 
         private void ProceedButton_Click(object sender, RoutedEventArgs e)
         {
+            string ipAddress = $"{IpBox1.Text}.{IpBox2.Text}.{IpBox3.Text}.{IpBox4.Text}";
 
-            if (IpBox1.Text == string.Empty || IpBox2.Text == string.Empty || IpBox3.Text == string.Empty || IpBox4.Text == string.Empty || PortBox.Text == string.Empty)
+            if (!isValidIPAddress(ipAddress))
                 WarningLabel.IsEnabled = true;
+
+            else if (isValidPort(PortBox.Text))
+            {
+                Client client = new Client(ipAddress, PortBox.Text);
+                client.Show();
+                this.Hide();
+            }
+        }
+
+        private bool isValidIPAddress(string addr)
+        {
+            // Checks if the string is empty
+            if (String.IsNullOrWhiteSpace(addr))
+                return false;
+
+            // Checks if the string has 4 scopes
+            string[] splitvalues = addr.Split('.');
+            if (splitvalues.Length != 4)
+                return false;
+            
+            // Checks if the values in the scopes is equal to or lower than 255
+            byte tempForParse;
+            bool test = splitvalues.All(r => byte.TryParse(r, out tempForParse));
+            return test;
+        }
+
+        private bool isValidPort(string port)
+        {
+            if (String.IsNullOrWhiteSpace(port))
+                return false;
+
+            // checks if the string is numeric
+            Regex numeric = new Regex(@"^[0-9]+$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            // checks if the string is numeric and if it fit in the scope of available ports
+            if (numeric.IsMatch(port))
+            {
+                try
+                {
+                    if (Convert.ToInt32(port) < 65536)
+                        return true;
+
+                } catch (OverflowException)
+                {
+                }
+            }
+            return false;
         }
     }
 }

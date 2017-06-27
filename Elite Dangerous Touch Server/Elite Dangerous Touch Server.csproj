@@ -90,7 +90,7 @@
     <Compile Include="IPSetup.xaml.cs">
       <DependentUpon>IPSetup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tcp Client and Server.cs" />
+    <Compile Include="TcpClientAndServer.cs" />
     <Page Include="Client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

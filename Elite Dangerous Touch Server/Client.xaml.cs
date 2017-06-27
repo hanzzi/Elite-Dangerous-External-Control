@@ -23,11 +23,10 @@ namespace Elite_Dangerous_Touch_Server
         private string Hostname;
         private int Port;
 
-        public Client()
+        public Client(string ipAddress, string port)
         {
             InitializeComponent();
-            IPSetup IP = new IPSetup();
-            IP.ShowDialog();
+            
             
             
         }
