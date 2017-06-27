@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,15 +24,20 @@ namespace Elite_Dangerous_Touch_Server
         private string Hostname;
         private int Port;
 
-        public Client(string ipAddress, string port)
+        public Client(string ipAddress, int port)
         {
             InitializeComponent();
-            
-            
-            
+            Hostname = ipAddress;
+            Port = port;
         }
 
-        private void ToggleLanding()
+        #region Commands
+
+        // Syntax: 
+        // COMMAND: Is the most basic keybinds built into Elite
+        // SCRIPT: More advanced control not inherently built into Elite 
+
+        private void ToggleGears()
         {
             SendCommand("COMMAND:Landing_Gear");
         }
@@ -43,7 +49,7 @@ namespace Elite_Dangerous_Touch_Server
 
         private void RequestDocking()
         {
-            SendCommand("COMMAND:RequestDocking");
+            SendCommand("SCRIPT:RequestDocking");
         }
 
         private void SilentRunning()
@@ -51,11 +57,87 @@ namespace Elite_Dangerous_Touch_Server
             SendCommand("COMMAND:SilentRunning");
         }
 
-        private void ChangeNetworkConfig()
+        private void TargetFront()
         {
-            Hostname = "INSERTHOSTNAMETEXTBOXHERE";
-            Port = 010101;
+            SendCommand("COMMAND:TargetForward");
         }
+
+        private void NextTarget()
+        {
+            SendCommand("COMMAND:NextTarget");
+        }
+
+        private void HighThreat()
+        {
+            SendCommand("COMMAND:HighThreat");
+        }
+
+        private void FrameShift()
+        {
+            SendCommand("COMMAND:FrameShift");
+        }
+
+        private void SubSystemNext()
+        {
+            SendCommand("COMMAND:SUBSYSNext");
+        }
+
+        private void SubSystemPrevious()
+        {
+            SendCommand("COMMAND:SUBSYSPrev");
+        }
+
+        private void DropHeatSink()
+        {
+            SendCommand("COMMAND:DropHeatSink");
+        }
+
+        private void ToggleLights()
+        {
+            SendCommand("COMMAND:ToggleLights");
+        }
+
+        private void SensorUP()
+        {
+            SendCommand("COMMAND:SensorUP");
+        }
+
+        private void SensorDOWN()
+        {
+            SendCommand("COMMAND:SensorDOWN");
+        }
+
+        private void PowerWeapons()
+        {
+            SendCommand("COMMAND:PowerWeapons");
+        }
+
+        private void PowerSystems()
+        {
+            SendCommand("COMMAND:PowerSystem");
+        }
+
+        private void PowerEngines()
+        {
+            SendCommand("COMMAND:PowerEngines");
+        }
+
+        private void PowerEqual()
+        {
+            SendCommand("COMMAND:PowerEqual");
+        }
+
+        private void ToggleScoop()
+        {
+            SendCommand("COMMAND:ToggleScoop");
+        }
+
+        private void OpenGalaxyMap()
+        {
+            SendCommand("COMMAND:OpenGalaxyMap");
+        }
+
+        #endregion
 
         private void SendCommand(string command)
         {

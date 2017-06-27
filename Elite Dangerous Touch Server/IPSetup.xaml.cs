@@ -30,6 +30,13 @@ namespace Elite_Dangerous_Touch_Server
             IpBox1.SelectAll();
         }
 
+        private IPAddress BuildIpAdress()
+        {
+            IPAddress addr = IPAddress.Parse($"{IpBox1.Text}.{IpBox2.Text}.{IpBox3.Text}.{IpBox4.Text}");
+
+            return addr;
+        }
+
         private void IpAddressTextBoxHandler1(object sender, TextChangedEventArgs e)
         {
             if (IsFirstRun)
@@ -94,7 +101,8 @@ namespace Elite_Dangerous_Touch_Server
 
             else if (isValidPort(PortBox.Text))
             {
-                Client client = new Client(ipAddress, PortBox.Text);
+
+                Client client = new Client(ipAddress, Convert.ToInt32(PortBox.Text));
                 client.Show();
                 this.Hide();
             }
