@@ -145,7 +145,7 @@ namespace Elite_Dangerous_Touch_Server
             
             client.WriteData(command);
             client.Close();
-        }
+        }  
 
 
     }

@@ -39,7 +39,9 @@ namespace Elite_Dangerous_Touch_Server
 
         private void CTRL_Reciever_Click(object sender, RoutedEventArgs e)
         {
-            
+            Reciever rec = new Reciever();
+            rec.Owner = this;
+            rec.Show();
         }
     }
 }

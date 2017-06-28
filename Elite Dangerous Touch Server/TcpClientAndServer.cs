@@ -68,7 +68,7 @@ namespace TCP_Client_and_Server
             catch (SocketException)
             {
                 // returns 2 when a connection could not be established.
-                return 2;
+                return 0;
             }
 
             // Connection established
